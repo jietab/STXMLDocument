@@ -11,11 +11,12 @@
 		2C0321F01929FA5C00B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
 		2C03223C192A1E1200B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
 		2C03223D192A1E1A00B70BE4 /* STXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C03223F192A219500B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
 		2C032250192A2EA500B70BE4 /* STXMLDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */; };
 		2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */; };
 		2C032270192A2FDD00B70BE4 /* libSTXMLDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0321E51929FA5C00B70BE4 /* libSTXMLDocument.a */; };
 		2C032271192A2FE100B70BE4 /* libSTXMLDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C032215192A1C8F00B70BE4 /* libSTXMLDocument.a */; };
+		2C032274192A304400B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
+		2C032275192A30C200B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C03223F192A219500B70BE4 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C032271192A2FE100B70BE4 /* libSTXMLDocument.a in Frameworks */,
+				2C032274192A304400B70BE4 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C032270192A2FDD00B70BE4 /* libSTXMLDocument.a in Frameworks */,
+				2C032275192A30C200B70BE4 /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +584,7 @@
 				2C032255192A2EA500B70BE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C03226C192A2EC900B70BE4 /* Build configuration list for PBXNativeTarget "STXMLDocumentTests-iOS" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +593,7 @@
 				2C03226E192A2EC900B70BE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
