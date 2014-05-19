@@ -1,0 +1,267 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C0321EE1929FA5C00B70BE4 /* STXMLDocument.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */; };
+		2C0321F01929FA5C00B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
+		2C03223C192A1E1200B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
+		2C03223D192A1E1A00B70BE4 /* STXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C03223F192A219500B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C0321E31929FA5C00B70BE4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				2C0321EE1929FA5C00B70BE4 /* STXMLDocument.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2C0321E51929FA5C00B70BE4 /* libSTXMLDocument.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTXMLDocument.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STXMLDocument.h; sourceTree = "<group>"; };
+		2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STXMLDocument.m; sourceTree = "<group>"; };
+		2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "STXMLDocument-iOS.xcconfig"; sourceTree = "<group>"; };
+		2C03220F192A02C000B70BE4 /* STXMLDocument.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STXMLDocument.xcconfig; sourceTree = "<group>"; };
+		2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "STXMLDocument-mac.xcconfig"; sourceTree = "<group>"; };
+		2C032215192A1C8F00B70BE4 /* libSTXMLDocument.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTXMLDocument.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C03223E192A219500B70BE4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C0321E21929FA5C00B70BE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C03223F192A219500B70BE4 /* libxml2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C032212192A1C8F00B70BE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C0321DC1929FA5C00B70BE4 = {
+			isa = PBXGroup;
+			children = (
+				2C0321EA1929FA5C00B70BE4 /* STXMLDocument */,
+				2C032240192A21A000B70BE4 /* lib */,
+				2C0321E61929FA5C00B70BE4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C0321E61929FA5C00B70BE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C0321E51929FA5C00B70BE4 /* libSTXMLDocument.a */,
+				2C032215192A1C8F00B70BE4 /* libSTXMLDocument.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C0321EA1929FA5C00B70BE4 /* STXMLDocument */ = {
+			isa = PBXGroup;
+			children = (
+				2C03220F192A02C000B70BE4 /* STXMLDocument.xcconfig */,
+				2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */,
+				2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */,
+				2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */,
+				2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */,
+			);
+			path = STXMLDocument;
+			sourceTree = "<group>";
+		};
+		2C032240192A21A000B70BE4 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2C03223E192A219500B70BE4 /* libxml2.dylib */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2C032213192A1C8F00B70BE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C03223D192A1E1A00B70BE4 /* STXMLDocument.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C0322081929FA5C00B70BE4 /* Build configuration list for PBXNativeTarget "STXMLDocument-iOS" */;
+			buildPhases = (
+				2C0321E11929FA5C00B70BE4 /* Sources */,
+				2C0321E21929FA5C00B70BE4 /* Frameworks */,
+				2C0321E31929FA5C00B70BE4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "STXMLDocument-iOS";
+			productName = STXMLDocument;
+			productReference = 2C0321E51929FA5C00B70BE4 /* libSTXMLDocument.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C032236192A1C9000B70BE4 /* Build configuration list for PBXNativeTarget "STXMLDocument-mac" */;
+			buildPhases = (
+				2C032211192A1C8F00B70BE4 /* Sources */,
+				2C032212192A1C8F00B70BE4 /* Frameworks */,
+				2C032213192A1C8F00B70BE4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "STXMLDocument-mac";
+			productName = "STXMLDocument-mac";
+			productReference = 2C032215192A1C8F00B70BE4 /* libSTXMLDocument.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C0321DD1929FA5C00B70BE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Scott Talbot";
+			};
+			buildConfigurationList = 2C0321E01929FA5C00B70BE4 /* Build configuration list for PBXProject "STXMLDocument" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C0321DC1929FA5C00B70BE4;
+			productRefGroup = 2C0321E61929FA5C00B70BE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */,
+				2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C0321E11929FA5C00B70BE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C0321F01929FA5C00B70BE4 /* STXMLDocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C032211192A1C8F00B70BE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C03223C192A1E1200B70BE4 /* STXMLDocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C0322061929FA5C00B70BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		2C0322071929FA5C00B70BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		2C0322091929FA5C00B70BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		2C03220A1929FA5C00B70BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		2C032237192A1C9000B70BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
+			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+			};
+			name = Debug;
+		};
+		2C032238192A1C9000B70BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C0321E01929FA5C00B70BE4 /* Build configuration list for PBXProject "STXMLDocument" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C0322061929FA5C00B70BE4 /* Debug */,
+				2C0322071929FA5C00B70BE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C0322081929FA5C00B70BE4 /* Build configuration list for PBXNativeTarget "STXMLDocument-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C0322091929FA5C00B70BE4 /* Debug */,
+				2C03220A1929FA5C00B70BE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C032236192A1C9000B70BE4 /* Build configuration list for PBXNativeTarget "STXMLDocument-mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C032237192A1C9000B70BE4 /* Debug */,
+				2C032238192A1C9000B70BE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+}
