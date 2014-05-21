@@ -15,6 +15,7 @@
     STXMLDocument * const doc = [[STXMLDocument alloc] initWithData:[@" " dataUsingEncoding:NSUTF8StringEncoding] error:&error];
     XCTAssertNil(doc, @"");
     XCTAssertNotNil(error, @"");
+    XCTAssertEqual(error.code, 0x10004, @"");
 }
 - (void)testSimpleInstantiation2 {
     STXMLDocument * const doc = [[STXMLDocument alloc] initWithData:[@"" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -46,6 +47,24 @@
     STXMLElement * const root = doc.rootElement;
     XCTAssertNotNil(root, @"");
     XCTAssertEqualObjects(root.content, @"bar", @"");
+}
+
+- (void)testRootContent2 {
+    STXMLDocument * const doc = [[STXMLDocument alloc] initWithData:[@"<?qux quux=\"quuux\"?><!--bar--><foo/>" dataUsingEncoding:NSUTF8StringEncoding]];
+    XCTAssertNotNil(doc, @"");
+    STXMLElement * const root = doc.rootElement;
+    XCTAssertNotNil(root, @"");
+    XCTAssertEqualObjects(root.content, @"", @"");
+
+    STXMLNode * const pi = doc.children[0];
+    XCTAssertNotNil(pi, @"");
+    XCTAssertEqual(pi.type, STXMLNodeTypePI, @"");
+    XCTAssertEqualObjects(pi.content, @"quux=\"quuux\"", @"");
+
+    STXMLNode * const comment = doc.children[1];
+    XCTAssertNotNil(comment, @"");
+    XCTAssertEqual(comment.type, STXMLNodeTypeCOMMENT, @"");
+    XCTAssertEqualObjects(comment.content, @"bar", @"");
 }
 
 - (void)testChildrenPassingTest1 {
@@ -89,6 +108,16 @@
     STXMLAttribute * const attribute = attributesPassingTest.firstObject;
     XCTAssertEqualObjects(attribute.name, @"a", @"");
     XCTAssertEqualObjects(attribute.content, @"b", @"");
+}
+
+- (void)testXPath1 {
+    STXMLDocument * const doc = [[STXMLDocument alloc] initWithData:[@"<a><b/><c><d>e</d></c><f/></a>" dataUsingEncoding:NSUTF8StringEncoding]];
+    XCTAssertNotNil(doc, @"");
+    STXPathNodeSetResult * const result = (STXPathNodeSetResult *)[doc resultByEvaluatingXPathExpression:@"//a/c/d"];
+    XCTAssertNotNil(result, @"");
+    id const xpathResultNodeContent = [result.nodes.firstObject content];
+    XCTAssertEqualObjects(xpathResultNodeContent, @"e", @"");
+    (void)xpathResultNodeContent;
 }
 
 @end

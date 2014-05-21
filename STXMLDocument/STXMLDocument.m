@@ -3,10 +3,19 @@
 #import "STXMLDocument.h"
 
 #include <libxml/parser.h>
+#include <libxml/xpath.h>
 
+
+@interface STXMLDocument ()
+- (STXMLNode *)uniquedNodeForNodePtr:(xmlNodePtr)nodePtr;
+@end
 
 @interface STXMLNode ()
 - (id)initWithDocument:(STXMLDocument *)doc nodePtr:(xmlNodePtr)nodePtr;
+@end
+
+@interface STXPathResult ()
+- (id)initWithDocument:(STXMLDocument *)doc xpathContextPtr:(xmlXPathContextPtr)xpathContextPtr objectPtr:(xmlXPathObjectPtr)xpathObjectPtr;
 @end
 
 
@@ -14,7 +23,10 @@
 @private
     xmlParserCtxt _pctx;
     xmlDocPtr _doc;
+    NSString *_name;
+    NSArray *_children;
     STXMLElement *_rootElement;
+    NSMapTable *_instantiatedNodesByNodePtr;
 }
 
 - (id)init {
@@ -41,11 +53,13 @@
     }
 
     if ((self = [super init])) {
+        _instantiatedNodesByNodePtr = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsIntegerPersonality|NSPointerFunctionsOpaqueMemory valueOptions:NSPointerFunctionsObjectPersonality|NSPointerFunctionsWeakMemory capacity:0];
+
         xmlInitParserCtxt(&_pctx);
 
         NSString * const baseURLString = baseURL.absoluteString;
-        const char * const baseURLUTF8String = [baseURLString cStringUsingEncoding:NSUTF8StringEncoding];
-        xmlDocPtr const doc = _doc = xmlCtxtReadMemory(&_pctx, bytes, (int)length, baseURLUTF8String, NULL, XML_PARSE_NOENT|XML_PARSE_NOBLANKS|XML_PARSE_COMPACT);
+        char const * const baseURLUTF8String = (char *)[baseURLString cStringUsingEncoding:NSUTF8StringEncoding];
+        xmlDocPtr const doc = _doc = xmlCtxtReadMemory(&_pctx, bytes, (int)length, baseURLUTF8String, NULL, XML_PARSE_NOENT|XML_PARSE_NOERROR|XML_PARSE_NOBLANKS|XML_PARSE_NONET|XML_PARSE_COMPACT);
         if (!doc) {
             if (error) {
                 xmlErrorPtr const xmlerr = xmlCtxtGetLastError(&_pctx);
@@ -61,17 +75,83 @@
 }
 
 - (void)dealloc {
-    xmlClearParserCtxt(&_pctx);
     xmlFreeDoc(_doc);
+    xmlClearParserCtxt(&_pctx);
+}
+
+
+- (NSArray *)children {
+    if (!_children) {
+        xmlNodePtr const node = (xmlNodePtr)_doc;
+
+        unsigned long const count = xmlChildElementCount(node);
+        NSMutableArray * const children = [[NSMutableArray alloc] initWithCapacity:count];
+
+        for (xmlNodePtr child = node->children; child; child = child->next) {
+            STXMLNode * const childNode = [self uniquedNodeForNodePtr:child];
+            [children addObject:childNode];
+        }
+
+        _children = children.copy;
+    }
+    return _children;
+}
+
+- (NSArray *)childrenPassingTest:(STXMLNodePredicate)predicate {
+    if (!predicate) {
+        return @[];
+    }
+
+    NSArray * const children = self.children;
+    NSIndexSet * const indexes = [children indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return predicate(obj, stop);
+    }];
+    return [children objectsAtIndexes:indexes];
 }
 
 
 - (STXMLElement *)rootElement {
     if (!_rootElement) {
         xmlNodePtr const rootNodePtr = xmlDocGetRootElement(_doc);
-        _rootElement = [[STXMLElement alloc] initWithDocument:self nodePtr:rootNodePtr];
+        _rootElement = (STXMLElement *)[self uniquedNodeForNodePtr:rootNodePtr];
     }
     return _rootElement;
+}
+
+
+- (STXMLNode *)uniquedNodeForNodePtr:(xmlNodePtr)nodePtr {
+    __unsafe_unretained id const key = (__bridge id)(void *)(nodePtr);
+    STXMLNode *node = [_instantiatedNodesByNodePtr objectForKey:key];
+    if (!node) {
+        node = [[STXMLNode alloc] initWithDocument:self nodePtr:nodePtr];
+        [_instantiatedNodesByNodePtr setObject:node forKey:key];
+    }
+    return node;
+}
+
+
+- (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath {
+    if (xpath.length == 0) {
+        return nil;
+    }
+
+    xmlChar const * const str = (xmlChar const *)[xpath cStringUsingEncoding:NSUTF8StringEncoding];
+    xmlDocPtr const doc = _doc;
+    xmlXPathContextPtr const ctx = xmlXPathNewContext(doc);
+    xmlXPathObjectPtr const xpathObject = xmlXPathEval(str, ctx);
+
+    Class klass = nil;
+    switch (xpathObject->type) {
+        case XPATH_NODESET:
+            klass = [STXPathNodeSetResult class];
+            break;
+        default:
+            break;
+    }
+    if (klass == nil) {
+        klass = [STXPathResult class];
+    }
+    return [[klass alloc] initWithDocument:self xpathContextPtr:ctx objectPtr:xpathObject];
 }
 
 @end
@@ -99,7 +179,6 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
 - (id)initWithDocument:(STXMLDocument *)doc nodePtr:(xmlNodePtr)nodePtr {
     NSParameterAssert(doc);
     NSParameterAssert(nodePtr);
-
     if ((self = [super init])) {
         _doc = doc;
         _node = nodePtr;
@@ -108,9 +187,13 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
 }
 
 - (void)dealloc {
-    xmlFreeNode(_node);
+//    xmlFreeDoc() on the root takes care of this
+//    xmlFreeNode(_node);
 }
 
+- (STXMLNodeType)type {
+    return (STXMLNodeType)_node->type;
+}
 
 - (NSString *)name {
     if (!_name) {
@@ -133,16 +216,8 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
         NSMutableArray * const children = [[NSMutableArray alloc] initWithCapacity:count];
 
         for (xmlNodePtr child = node->children; child; child = child->next) {
-            switch (child->type) {
-                case XML_ELEMENT_NODE: {
-                    STXMLElement * const childNode = [[STXMLElement alloc] initWithDocument:doc nodePtr:child];
-                    [children addObject:childNode];
-                } break;
-                default: {
-                    STXMLNode * const childNode = [[STXMLNode alloc] initWithDocument:doc nodePtr:child];
-                    [children addObject:childNode];
-                } break;
-            }
+            STXMLNode * const childNode = [doc uniquedNodeForNodePtr:child];
+            [children addObject:childNode];
         }
 
         _children = children.copy;
@@ -165,12 +240,13 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
 
 - (NSArray *)attributes {
     if (!_attributes) {
+        STXMLDocument * const doc = _doc;
         xmlNodePtr const node = _node;
 
         NSMutableArray * const attributes = [[NSMutableArray alloc] initWithCapacity:0];
 
         for (xmlAttrPtr attribute = node->properties; attribute; attribute = attribute->next) {
-            STXMLAttribute * const attributeNode = [[STXMLAttribute alloc] initWithDocument:_doc nodePtr:(xmlNodePtr)attribute];
+            STXMLNode * const attributeNode = [doc uniquedNodeForNodePtr:(xmlNodePtr)attribute];
             [attributes addObject:attributeNode];
         }
 
@@ -212,4 +288,62 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
 
 
 @implementation STXMLAttribute
+@end
+
+
+@implementation STXPathResult {
+@protected
+    STXMLDocument *_doc;
+    xmlXPathContextPtr _xpathContext;
+    xmlXPathObjectPtr _xpathObject;
+}
+
+- (id)init {
+    return [self initWithDocument:nil xpathContextPtr:NULL objectPtr:NULL];
+}
+
+- (id)initWithDocument:(STXMLDocument *)doc xpathContextPtr:(xmlXPathContextPtr)xpathContextPtr objectPtr:(xmlXPathObjectPtr)xpathObjectPtr {
+    NSParameterAssert(doc);
+    NSParameterAssert(xpathObjectPtr);
+    if ((self = [super init])) {
+        _doc = doc;
+        _xpathContext = xpathContextPtr;
+        _xpathObject = xpathObjectPtr;
+    }
+    return self;
+}
+
+- (void)dealloc {
+    xmlXPathFreeObject(_xpathObject);
+    xmlXPathFreeContext(_xpathContext);
+}
+
+@end
+
+
+@implementation STXPathNodeSetResult {
+@protected
+    NSArray *_nodes;
+}
+
+- (NSArray *)nodes {
+    if (!_nodes) {
+        STXMLDocument * const doc = _doc;
+        xmlXPathObjectPtr const xpathObject = _xpathObject;
+        xmlNodeSetPtr const nodeset = xpathObject->nodesetval;
+
+        NSMutableArray * const nodes = [[NSMutableArray alloc] initWithCapacity:(NSUInteger)nodeset->nodeNr];
+
+        for (int i = 0; i < nodeset->nodeNr; ++i) {
+            xmlNodePtr const node = nodeset->nodeTab[i];
+            STXMLNode * const n = [doc uniquedNodeForNodePtr:node];
+            [nodes addObject:n];
+            (void)n;
+        }
+
+        _nodes = nodes.copy;
+    }
+    return _nodes;
+}
+
 @end

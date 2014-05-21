@@ -3,9 +3,38 @@
 #import <Foundation/Foundation.h>
 
 
+typedef NS_ENUM(NSUInteger, STXMLNodeType) {
+    STXMLNodeTypeELEMENT = 1,
+    STXMLNodeTypeATTRIBUTE = 2,
+    STXMLNodeTypeTEXT = 3,
+    STXMLNodeTypeSECTION = 4,
+    STXMLNodeTypeENTITYREF = 5,
+    STXMLNodeTypeENTITY = 6,
+    STXMLNodeTypePI = 7,
+    STXMLNodeTypeCOMMENT = 8,
+    STXMLNodeTypeDOCUMENT = 9,
+    STXMLNodeTypeDOCUMENTTYPE = 10,
+    STXMLNodeTypeDOCUMENTFRAG = 11,
+    STXMLNodeTypeNOTATION = 12,
+    STXMLNodeTypeHTMLDOCUMENT = 13,
+    STXMLNodeTypeDTD = 14,
+    STXMLNodeTypeELEMENTDECL = 15,
+    STXMLNodeTypeATTRIBUTEDECL = 16,
+    STXMLNodeTypeENTITYDECL = 17,
+    STXMLNodeTypeNAMESPACEDECL = 18,
+    STXMLNodeTypeXINCLUDESTART = 19,
+    STXMLNodeTypeXINCLUDEEND = 20,
+    STXMLNodeTypeDOCBDOCUMENT = 21,
+};
+
 @class STXMLDocument;
 @class STXMLNode;
 @class STXMLElement;
+@class STXPathResult;
+
+typedef BOOL(^STXMLNodePredicate)(STXMLNode *node, BOOL *stop);
+
+extern STXMLNodePredicate STXMLNodeHasName(NSString *name);
 
 
 @interface STXMLDocument : NSObject
@@ -13,37 +42,12 @@
 - (id)initWithData:(NSData *)data error:(NSError * __autoreleasing *)error;
 - (id)initWithData:(NSData *)data baseURL:(NSURL *)baseURL;
 - (id)initWithData:(NSData *)data baseURL:(NSURL *)baseURL error:(NSError * __autoreleasing *)error;
+@property (nonatomic,copy,readonly) NSArray *children;
+- (NSArray *)childrenPassingTest:(STXMLNodePredicate)predicate;
 @property (nonatomic,copy,readonly) STXMLElement *rootElement;
+- (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath;
 @end
 
-
-typedef NS_ENUM(NSUInteger, STXMLNodeType) {
-    STXMLElementTypeELEMENT = 1,
-    STXMLElementTypeATTRIBUTE = 2,
-    STXMLElementTypeTEXT = 3,
-    STXMLElementTypeSECTION = 4,
-    STXMLElementTypeENTITYREF = 5,
-    STXMLElementTypeENTITY = 6,
-    STXMLElementTypePI = 7,
-    STXMLElementTypeCOMMENT = 8,
-    STXMLElementTypeDOCUMENT = 9,
-    STXMLElementTypeDOCUMENTTYPE = 10,
-    STXMLElementTypeDOCUMENTFRAG = 11,
-    STXMLElementTypeNOTATION = 12,
-    STXMLElementTypeHTMLDOCUMENT = 13,
-    STXMLElementTypeDTD = 14,
-    STXMLElementTypeELEMENTDECL = 15,
-    STXMLElementTypeATTRIBUTEDECL = 16,
-    STXMLElementTypeENTITYDECL = 17,
-    STXMLElementTypeNAMESPACEDECL = 18,
-    STXMLElementTypeXINCLUDESTART = 19,
-    STXMLElementTypeXINCLUDEEND = 20,
-    STXMLElementTypeDOCBDOCUMENT = 21,
-};
-
-typedef BOOL(^STXMLNodePredicate)(STXMLNode *node, BOOL *stop);
-
-extern STXMLNodePredicate STXMLNodeHasName(NSString *name);
 
 @interface STXMLNode : NSObject
 @property (nonatomic,assign,readonly) STXMLNodeType type;
@@ -59,4 +63,12 @@ extern STXMLNodePredicate STXMLNodeHasName(NSString *name);
 @end
 
 @interface STXMLAttribute : STXMLNode
+@end
+
+
+@interface STXPathResult : NSObject
+@end
+
+@interface STXPathNodeSetResult : STXPathResult
+@property (nonatomic,copy,readonly) NSArray *nodes;
 @end
