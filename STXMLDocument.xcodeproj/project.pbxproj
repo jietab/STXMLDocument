@@ -11,8 +11,8 @@
 		2C0321F01929FA5C00B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
 		2C03223C192A1E1200B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
 		2C03223D192A1E1A00B70BE4 /* STXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C032250192A2EA500B70BE4 /* STXMLDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */; };
-		2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */; };
+		2C032250192A2EA500B70BE4 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */; };
+		2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */; };
 		2C032270192A2FDD00B70BE4 /* libSTXMLDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0321E51929FA5C00B70BE4 /* libSTXMLDocument.a */; };
 		2C032271192A2FE100B70BE4 /* libSTXMLDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C032215192A1C8F00B70BE4 /* libSTXMLDocument.a */; };
 		2C032274192A304400B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
@@ -33,6 +33,111 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
 			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5B6193DD8580062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5BB193DDBA80062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C032214192A1C8F00B70BE4;
+			remoteInfo = "STXMLDocument-mac";
+		};
+		2C80B5BD193DDC000062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5BF193DDC020062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C032214192A1C8F00B70BE4;
+			remoteInfo = "STXMLDocument-mac";
+		};
+		2C80B5C1193DDC040062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5C3193DDC060062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C032214192A1C8F00B70BE4;
+			remoteInfo = "STXMLDocument-mac";
+		};
+		2C80B5C7193DDD450062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5C9193DDF6C0062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5CB193DDFB70062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5CD193DE0900062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5CF193DE0920062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5D1193DE0920062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
+		2C80B5D3193DE0940062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C032214192A1C8F00B70BE4;
+			remoteInfo = "STXMLDocument-mac";
+		};
+		2C80B5DA193DE1610062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C032214192A1C8F00B70BE4;
+			remoteInfo = "STXMLDocument-mac";
+		};
+		2C80B5E9193DE1A20062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C032214192A1C8F00B70BE4;
+			remoteInfo = "STXMLDocument-mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,8 +165,9 @@
 		2C03223E192A219500B70BE4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		2C032245192A2EA500B70BE4 /* STXMLDocumentTests-mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STXMLDocumentTests-mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C03224B192A2EA500B70BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STXMLDocumentTests.m; sourceTree = "<group>"; };
+		2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STXMLDocumentTests.swift; sourceTree = "<group>"; };
 		2C03225B192A2EC800B70BE4 /* STXMLDocumentTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STXMLDocumentTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C80B5C6193DDD360062FA46 /* STXMLDocumentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STXMLDocumentTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				2C03224B192A2EA500B70BE4 /* Info.plist */,
-				2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */,
+				2C80B5C6193DDD360062FA46 /* STXMLDocumentTests-Bridging-Header.h */,
+				2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */,
 			);
 			path = STXMLDocumentTests;
 			sourceTree = "<group>";
@@ -210,6 +317,12 @@
 			);
 			dependencies = (
 				2C032253192A2EA500B70BE4 /* PBXTargetDependency */,
+				2C80B5BC193DDBA80062FA46 /* PBXTargetDependency */,
+				2C80B5C0193DDC020062FA46 /* PBXTargetDependency */,
+				2C80B5C4193DDC060062FA46 /* PBXTargetDependency */,
+				2C80B5D4193DE0940062FA46 /* PBXTargetDependency */,
+				2C80B5DB193DE1610062FA46 /* PBXTargetDependency */,
+				2C80B5EA193DE1A20062FA46 /* PBXTargetDependency */,
 			);
 			name = "STXMLDocumentTests-mac";
 			productName = "STXMLDocumentTests-mac";
@@ -228,6 +341,15 @@
 			);
 			dependencies = (
 				2C03226B192A2EC900B70BE4 /* PBXTargetDependency */,
+				2C80B5B7193DD8580062FA46 /* PBXTargetDependency */,
+				2C80B5BE193DDC000062FA46 /* PBXTargetDependency */,
+				2C80B5C2193DDC040062FA46 /* PBXTargetDependency */,
+				2C80B5C8193DDD450062FA46 /* PBXTargetDependency */,
+				2C80B5CA193DDF6C0062FA46 /* PBXTargetDependency */,
+				2C80B5CC193DDFB70062FA46 /* PBXTargetDependency */,
+				2C80B5CE193DE0900062FA46 /* PBXTargetDependency */,
+				2C80B5D0193DE0920062FA46 /* PBXTargetDependency */,
+				2C80B5D2193DE0920062FA46 /* PBXTargetDependency */,
 			);
 			name = "STXMLDocumentTests-iOS";
 			productName = "STXMLDocumentTests-iOS";
@@ -240,7 +362,7 @@
 		2C0321DD1929FA5C00B70BE4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Scott Talbot";
 				TargetAttributes = {
 					2C032244192A2EA500B70BE4 = {
@@ -309,7 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C032250192A2EA500B70BE4 /* STXMLDocumentTests.m in Sources */,
+				2C032250192A2EA500B70BE4 /* STXMLDocumentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */,
+				2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +455,81 @@
 			isa = PBXTargetDependency;
 			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
 			targetProxy = 2C03226A192A2EC900B70BE4 /* PBXContainerItemProxy */;
+		};
+		2C80B5B7193DD8580062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5B6193DD8580062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5BC193DDBA80062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */;
+			targetProxy = 2C80B5BB193DDBA80062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5BE193DDC000062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5BD193DDC000062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5C0193DDC020062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */;
+			targetProxy = 2C80B5BF193DDC020062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5C2193DDC040062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5C1193DDC040062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5C4193DDC060062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */;
+			targetProxy = 2C80B5C3193DDC060062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5C8193DDD450062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5C7193DDD450062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5CA193DDF6C0062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5C9193DDF6C0062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5CC193DDFB70062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5CB193DDFB70062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5CE193DE0900062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5CD193DE0900062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5D0193DE0920062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5CF193DE0920062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5D2193DE0920062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B5D1193DE0920062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5D4193DE0940062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */;
+			targetProxy = 2C80B5D3193DE0940062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5DB193DE1610062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */;
+			targetProxy = 2C80B5DA193DE1610062FA46 /* PBXContainerItemProxy */;
+		};
+		2C80B5EA193DE1A20062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */;
+			targetProxy = 2C80B5E9193DE1A20062FA46 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -353,6 +550,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -360,6 +560,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 			};
 			name = Release;
 		};
@@ -416,10 +618,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = STXMLDocumentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocumentTests/STXMLDocumentTests-Bridging-Header.h";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -456,9 +660,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = STXMLDocumentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocumentTests/STXMLDocumentTests-Bridging-Header.h";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -501,9 +707,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = STXMLDocumentTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocumentTests/STXMLDocumentTests-Bridging-Header.h";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -540,8 +748,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = STXMLDocumentTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocumentTests/STXMLDocumentTests-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
