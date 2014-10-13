@@ -139,4 +139,21 @@ class STXMLDocumentTests: XCTestCase {
         }
     }
 
+    func testXPath2() {
+        let input = "<foo:foo xmlns:foo=\"http://xmlns.chikachow.org/foo\">a</foo:foo>".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        let doc = STXMLDocument(data: input)
+        XCTAssertNotNil(doc, "");
+
+        var namespaces = ["foo": "http://xmlns.chikachow.org/foo"] as NSDictionary
+        if let result: STXPathNodeSetResult = doc.resultByEvaluatingXPathExpression("/foo:foo", namespaces:namespaces) as? STXPathNodeSetResult {
+            if let resultNode = (result.nodes.first as STXMLNode?) {
+                XCTAssertEqual(resultNode.content!, "a", "");
+            } else {
+                XCTAssert(false)
+            }
+        } else {
+            XCTAssert(false)
+        }
+    }
+
 }

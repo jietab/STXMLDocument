@@ -46,6 +46,8 @@ extern STXMLNodePredicate STXMLNodeHasName(NSString *name);
 - (NSArray *)childrenPassingTest:(STXMLNodePredicate)predicate;
 @property (nonatomic,copy,readonly) STXMLElement *rootElement;
 - (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath;
+- (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath namespaces:(NSDictionary *)namespaces;
+- (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath namespaces:(NSDictionary *)namespaces error:(NSError * __autoreleasing *)error;
 @end
 
 

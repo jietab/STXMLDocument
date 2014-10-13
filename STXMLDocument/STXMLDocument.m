@@ -4,6 +4,7 @@
 
 #include <libxml/parser.h>
 #include <libxml/xpath.h>
+#include <libxml/xpathInternals.h>
 
 
 @interface STXMLDocument ()
@@ -131,6 +132,12 @@
 
 
 - (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath {
+    return [self resultByEvaluatingXPathExpression:xpath namespaces:nil error:NULL];
+}
+- (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath namespaces:(NSDictionary *)namespaces {
+    return [self resultByEvaluatingXPathExpression:xpath namespaces:namespaces error:NULL];
+}
+- (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath namespaces:(NSDictionary *)namespaces error:(NSError * __autoreleasing *)error {
     if (xpath.length == 0) {
         return nil;
     }
@@ -138,7 +145,36 @@
     xmlChar const * const str = (xmlChar const *)[xpath cStringUsingEncoding:NSUTF8StringEncoding];
     xmlDocPtr const doc = _doc;
     xmlXPathContextPtr const ctx = xmlXPathNewContext(doc);
+    for (NSString *prefix in namespaces) {
+        NSString * const namespace = namespaces[prefix];
+        if ([prefix isKindOfClass:[NSString class]] && [namespace isKindOfClass:[NSString class]]) {
+            xmlChar const * const prefix_str = (xmlChar const *)[prefix cStringUsingEncoding:NSUTF8StringEncoding];
+            xmlChar const * const namespace_str = (xmlChar const *)[namespace cStringUsingEncoding:NSUTF8StringEncoding];
+            if (xmlXPathRegisterNs(ctx, prefix_str, namespace_str)) {
+                xmlErrorPtr const xmlerr = xmlCtxtGetLastError(&_pctx);
+                if (xmlerr) {
+                    NSInteger const errorCode = ((xmlerr->domain << 16) | (xmlerr->code));
+                    if (error) {
+                        *error = [[NSError alloc] initWithDomain:@"STXML" code:errorCode userInfo:nil];
+                    }
+                }
+                return nil;
+            }
+        } else {
+            return nil;
+        }
+    }
     xmlXPathObjectPtr const xpathObject = xmlXPathEval(str, ctx);
+    if (!xpathObject) {
+        xmlErrorPtr const xmlerr = xmlCtxtGetLastError(&_pctx);
+        if (xmlerr) {
+            NSInteger const errorCode = ((xmlerr->domain << 16) | (xmlerr->code));
+            if (error) {
+                *error = [[NSError alloc] initWithDomain:@"STXML" code:errorCode userInfo:nil];
+            }
+        }
+        return nil;
+    }
 
     Class klass = nil;
     switch (xpathObject->type) {

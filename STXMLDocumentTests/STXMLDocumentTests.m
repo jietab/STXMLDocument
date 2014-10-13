@@ -151,5 +151,19 @@
     STXMLNode * const resultNode = nsresult.nodes.firstObject;
     XCTAssertEqualObjects(resultNode.content, @"e", @"");
 }
+- (void)testXPath2 {
+    NSData * const input = [@"<foo:foo xmlns:foo=\"http://xmlns.chikachow.org/foo\">a</foo:foo>" dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
+    STXMLDocument * const doc = [[STXMLDocument alloc] initWithData:input];
+    XCTAssertNotNil(doc, "");
+
+    STXPathResult * const result = [doc resultByEvaluatingXPathExpression:@"/foo:foo" namespaces:@{ @"foo": @"http://xmlns.chikachow.org/foo" }];
+    XCTAssertNotNil(result, @"");
+
+    STXPathNodeSetResult * const nsresult = (STXPathNodeSetResult *)([result isKindOfClass:[STXPathNodeSetResult class]] ? result : nil);
+    XCTAssertNotNil(nsresult, @"");
+
+    STXMLNode * const resultNode = nsresult.nodes.firstObject;
+    XCTAssertEqualObjects(resultNode.content, @"a", @"");
+}
 
 @end
