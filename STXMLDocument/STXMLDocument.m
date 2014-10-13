@@ -71,6 +71,22 @@
             }
             return nil;
         }
+
+        {
+            unsigned long const count = xmlChildElementCount((xmlNodePtr)doc);
+            NSMutableArray * const children = [[NSMutableArray alloc] initWithCapacity:count];
+
+            for (xmlNodePtr child = doc->children; child; child = child->next) {
+                STXMLNode * const childNode = [self uniquedNodeForNodePtr:child];
+                [children addObject:childNode];
+            }
+            _children = children.copy;
+        }
+
+        {
+            xmlNodePtr const rootNodePtr = xmlDocGetRootElement(_doc);
+            _rootElement = (STXMLElement *)[self uniquedNodeForNodePtr:rootNodePtr];
+        }
     }
     return self;
 }
@@ -81,51 +97,50 @@
 }
 
 
-- (NSArray *)children {
-    if (!_children) {
-        xmlNodePtr const node = (xmlNodePtr)_doc;
-
-        unsigned long const count = xmlChildElementCount(node);
-        NSMutableArray * const children = [[NSMutableArray alloc] initWithCapacity:count];
-
-        for (xmlNodePtr child = node->children; child; child = child->next) {
-            STXMLNode * const childNode = [self uniquedNodeForNodePtr:child];
-            [children addObject:childNode];
-        }
-
-        _children = children.copy;
-    }
-    return _children;
-}
-
-- (NSArray *)childrenPassingTest:(STXMLNodePredicate)predicate {
-    if (!predicate) {
-        return @[];
-    }
-
-    NSArray * const children = self.children;
-    NSIndexSet * const indexes = [children indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        return predicate(obj, stop);
-    }];
-    return [children objectsAtIndexes:indexes];
-}
-
-
-- (STXMLElement *)rootElement {
-    if (!_rootElement) {
-        xmlNodePtr const rootNodePtr = xmlDocGetRootElement(_doc);
-        _rootElement = (STXMLElement *)[self uniquedNodeForNodePtr:rootNodePtr];
-    }
-    return _rootElement;
-}
-
-
 - (STXMLNode *)uniquedNodeForNodePtr:(xmlNodePtr)nodePtr {
+    if (!nodePtr) {
+        return nil;
+    }
+
     __unsafe_unretained id const key = (__bridge id)(void *)(nodePtr);
     STXMLNode *node = [_instantiatedNodesByNodePtr objectForKey:key];
     if (!node) {
-        node = [[STXMLNode alloc] initWithDocument:self nodePtr:nodePtr];
-        [_instantiatedNodesByNodePtr setObject:node forKey:key];
+        switch (nodePtr->type) {
+            case XML_ELEMENT_NODE: {
+                node = [[STXMLElement alloc] initWithDocument:self nodePtr:nodePtr];
+            } break;
+            case XML_ATTRIBUTE_NODE: {
+                node = [[STXMLAttribute alloc] initWithDocument:self nodePtr:nodePtr];
+            } break;
+            case XML_TEXT_NODE:
+            case XML_CDATA_SECTION_NODE:
+            case XML_ENTITY_REF_NODE:
+            case XML_ENTITY_NODE:
+            case XML_PI_NODE:
+            case XML_COMMENT_NODE:
+            case XML_DOCUMENT_NODE:
+            case XML_DOCUMENT_TYPE_NODE:
+            case XML_DOCUMENT_FRAG_NODE:
+            case XML_NOTATION_NODE:
+            case XML_HTML_DOCUMENT_NODE:
+            case XML_DTD_NODE:
+            case XML_ELEMENT_DECL:
+            case XML_ATTRIBUTE_DECL:
+            case XML_ENTITY_DECL:
+            case XML_NAMESPACE_DECL:
+            case XML_XINCLUDE_START:
+            case XML_XINCLUDE_END:
+#ifdef LIBXML_DOCB_ENABLED
+            case XML_DOCB_DOCUMENT_NODE:
+#endif
+                break;
+        }
+        if (!node) {
+            node = [[STXMLNode alloc] initWithDocument:self nodePtr:nodePtr];
+        }
+        if (node) {
+            [_instantiatedNodesByNodePtr setObject:node forKey:key];
+        }
     }
     return node;
 }
