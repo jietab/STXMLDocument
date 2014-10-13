@@ -73,3 +73,6 @@ extern STXMLNodePredicate STXMLNodeHasName(NSString *name);
 @interface STXPathNodeSetResult : STXPathResult
 @property (nonatomic,copy,readonly) NSArray *nodes;
 @end
+
+
+#import <STXMLDocument/STXMLBuilder.h>

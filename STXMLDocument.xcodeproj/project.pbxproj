@@ -19,6 +19,14 @@
 		2C032275192A30C200B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
 		2C50CDBD1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */; };
 		2C50CDBE1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */; };
+		2CCB67B819EBCBA200947B73 /* STXMLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */; };
+		2CCB67B919EBCBA200947B73 /* STXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */; };
+		2CCB67BA19EBCBA200947B73 /* STXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */; };
+		2CCB67BC19EBD29C00947B73 /* STXMLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */; };
+		2CCB67BD19EBD29C00947B73 /* STXMLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */; };
+		2CCB67BF19EBD2AB00947B73 /* STXMLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67BE19EBD2AB00947B73 /* STXMLBuilderTests.swift */; };
+		2CCB67C019EBD2AB00947B73 /* STXMLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67BE19EBD2AB00947B73 /* STXMLBuilderTests.swift */; };
+		2CCB67C119EBD36500947B73 /* STXMLBuilder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +165,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				2CCB67C119EBD36500947B73 /* STXMLBuilder.h in CopyFiles */,
 				2C0321EE1929FA5C00B70BE4 /* STXMLDocument.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +187,10 @@
 		2C03225B192A2EC800B70BE4 /* STXMLDocumentTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STXMLDocumentTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STXMLDocumentTests.swift; sourceTree = "<group>"; };
 		2C80B5C6193DDD360062FA46 /* STXMLDocumentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STXMLDocumentTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STXMLBuilder.h; sourceTree = "<group>"; };
+		2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STXMLBuilder.m; sourceTree = "<group>"; };
+		2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STXMLBuilderTests.m; sourceTree = "<group>"; };
+		2CCB67BE19EBD2AB00947B73 /* STXMLBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STXMLBuilderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +258,8 @@
 				2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */,
 				2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */,
 				2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */,
+				2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */,
+				2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */,
 			);
 			path = STXMLDocument;
 			sourceTree = "<group>";
@@ -264,6 +279,8 @@
 				2C80B5C6193DDD360062FA46 /* STXMLDocumentTests-Bridging-Header.h */,
 				2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */,
 				2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */,
+				2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */,
+				2CCB67BE19EBD2AB00947B73 /* STXMLBuilderTests.swift */,
 			);
 			path = STXMLDocumentTests;
 			sourceTree = "<group>";
@@ -276,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C03223D192A1E1A00B70BE4 /* STXMLDocument.h in Headers */,
+				2CCB67B819EBCBA200947B73 /* STXMLBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCB67B919EBCBA200947B73 /* STXMLBuilder.m in Sources */,
 				2C0321F01929FA5C00B70BE4 /* STXMLDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCB67BA19EBCBA200947B73 /* STXMLBuilder.m in Sources */,
 				2C03223C192A1E1200B70BE4 /* STXMLDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +463,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCB67C019EBD2AB00947B73 /* STXMLBuilderTests.swift in Sources */,
 				2C032250192A2EA500B70BE4 /* STXMLDocumentTests.m in Sources */,
+				2CCB67BD19EBD29C00947B73 /* STXMLBuilderTests.m in Sources */,
 				2C50CDBE1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +474,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCB67BF19EBD2AB00947B73 /* STXMLBuilderTests.swift in Sources */,
 				2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */,
+				2CCB67BC19EBD29C00947B73 /* STXMLBuilderTests.m in Sources */,
 				2C50CDBD1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
