@@ -11,12 +11,14 @@
 		2C0321F01929FA5C00B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
 		2C03223C192A1E1200B70BE4 /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
 		2C03223D192A1E1A00B70BE4 /* STXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C032250192A2EA500B70BE4 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */; };
-		2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */; };
+		2C032250192A2EA500B70BE4 /* STXMLDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */; };
+		2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */; };
 		2C032270192A2FDD00B70BE4 /* libSTXMLDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0321E51929FA5C00B70BE4 /* libSTXMLDocument.a */; };
 		2C032271192A2FE100B70BE4 /* libSTXMLDocument.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C032215192A1C8F00B70BE4 /* libSTXMLDocument.a */; };
 		2C032274192A304400B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
 		2C032275192A30C200B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
+		2C50CDBD1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */; };
+		2C50CDBE1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,13 @@
 			remoteGlobalIDString = 2C032214192A1C8F00B70BE4;
 			remoteInfo = "STXMLDocument-mac";
 		};
+		2C80B609193DE9BE0062FA46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C0321DD1929FA5C00B70BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C0321E41929FA5C00B70BE4;
+			remoteInfo = "STXMLDocument-iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -165,8 +174,9 @@
 		2C03223E192A219500B70BE4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		2C032245192A2EA500B70BE4 /* STXMLDocumentTests-mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STXMLDocumentTests-mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C03224B192A2EA500B70BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STXMLDocumentTests.swift; sourceTree = "<group>"; };
+		2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STXMLDocumentTests.m; sourceTree = "<group>"; };
 		2C03225B192A2EC800B70BE4 /* STXMLDocumentTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STXMLDocumentTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STXMLDocumentTests.swift; sourceTree = "<group>"; };
 		2C80B5C6193DDD360062FA46 /* STXMLDocumentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STXMLDocumentTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,7 +262,8 @@
 			children = (
 				2C03224B192A2EA500B70BE4 /* Info.plist */,
 				2C80B5C6193DDD360062FA46 /* STXMLDocumentTests-Bridging-Header.h */,
-				2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.swift */,
+				2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */,
+				2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */,
 			);
 			path = STXMLDocumentTests;
 			sourceTree = "<group>";
@@ -350,6 +361,7 @@
 				2C80B5CE193DE0900062FA46 /* PBXTargetDependency */,
 				2C80B5D0193DE0920062FA46 /* PBXTargetDependency */,
 				2C80B5D2193DE0920062FA46 /* PBXTargetDependency */,
+				2C80B60A193DE9BE0062FA46 /* PBXTargetDependency */,
 			);
 			name = "STXMLDocumentTests-iOS";
 			productName = "STXMLDocumentTests-iOS";
@@ -431,7 +443,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C032250192A2EA500B70BE4 /* STXMLDocumentTests.swift in Sources */,
+				2C032250192A2EA500B70BE4 /* STXMLDocumentTests.m in Sources */,
+				2C50CDBE1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +452,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.swift in Sources */,
+				2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */,
+				2C50CDBD1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,18 +545,27 @@
 			target = 2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */;
 			targetProxy = 2C80B5E9193DE1A20062FA46 /* PBXContainerItemProxy */;
 		};
+		2C80B60A193DE9BE0062FA46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */;
+			targetProxy = 2C80B609193DE9BE0062FA46 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2C0322061929FA5C00B70BE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_INCLUDE_PATHS = "$(BUILT_PRODUCTS_DIR) $(DESTROOT) $(SRCROOT)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocument/STXMLDocument-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		2C0322071929FA5C00B70BE4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_INCLUDE_PATHS = "$(BUILT_PRODUCTS_DIR) $(DESTROOT) $(SRCROOT)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocument/STXMLDocument-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -552,6 +575,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocument/STXMLDocument-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -562,6 +586,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocument/STXMLDocument-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -571,6 +596,7 @@
 			buildSettings = {
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocument/STXMLDocument-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -578,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
 			buildSettings = {
+				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocument/STXMLDocument-Bridging-Header.h";
 			};
 			name = Release;
 		};
