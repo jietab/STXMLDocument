@@ -19,7 +19,12 @@
 		2C032275192A30C200B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
 		2C50CDBD1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */; };
 		2C50CDBE1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */; };
-		2CCB67B819EBCBA200947B73 /* STXMLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */; };
+		2CBDAAA519ED143100B561CF /* STXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CBDAAA619ED143100B561CF /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
+		2CBDAAA719ED143100B561CF /* STXMLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CBDAAA819ED143100B561CF /* STXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */; };
+		2CBDAAA919ED144E00B561CF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2CCB67B819EBCBA200947B73 /* STXMLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CCB67B919EBCBA200947B73 /* STXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */; };
 		2CCB67BA19EBCBA200947B73 /* STXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */; };
 		2CCB67BC19EBD29C00947B73 /* STXMLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */; };
@@ -187,6 +192,9 @@
 		2C03225B192A2EC800B70BE4 /* STXMLDocumentTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STXMLDocumentTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C50CDBC1994D2A20043CF19 /* STXMLDocumentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STXMLDocumentTests.swift; sourceTree = "<group>"; };
 		2C80B5C6193DDD360062FA46 /* STXMLDocumentTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STXMLDocumentTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		2CBDAA8C19ED12C300B561CF /* STXMLDocument.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STXMLDocument.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CBDAA8F19ED12C300B561CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CBDAAAA19ED148E00B561CF /* STXMLDocument.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = STXMLDocument.playground; sourceTree = "<group>"; };
 		2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STXMLBuilder.h; sourceTree = "<group>"; };
 		2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STXMLBuilder.m; sourceTree = "<group>"; };
 		2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STXMLBuilderTests.m; sourceTree = "<group>"; };
@@ -226,12 +234,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2CBDAA8819ED12C300B561CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBDAAA919ED144E00B561CF /* libxml2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2C0321DC1929FA5C00B70BE4 = {
 			isa = PBXGroup;
 			children = (
+				2CBDAAAA19ED148E00B561CF /* STXMLDocument.playground */,
 				2C0321EA1929FA5C00B70BE4 /* STXMLDocument */,
 				2C032249192A2EA500B70BE4 /* STXMLDocumentTests */,
 				2C032240192A21A000B70BE4 /* lib */,
@@ -246,6 +263,7 @@
 				2C032215192A1C8F00B70BE4 /* libSTXMLDocument.a */,
 				2C032245192A2EA500B70BE4 /* STXMLDocumentTests-mac.xctest */,
 				2C03225B192A2EC800B70BE4 /* STXMLDocumentTests-iOS.xctest */,
+				2CBDAA8C19ED12C300B561CF /* STXMLDocument.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +274,7 @@
 				2C03220F192A02C000B70BE4 /* STXMLDocument.xcconfig */,
 				2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */,
 				2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */,
+				2CBDAA8F19ED12C300B561CF /* Info.plist */,
 				2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */,
 				2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */,
 				2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */,
@@ -294,6 +313,15 @@
 			files = (
 				2C03223D192A1E1A00B70BE4 /* STXMLDocument.h in Headers */,
 				2CCB67B819EBCBA200947B73 /* STXMLBuilder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CBDAA8919ED12C300B561CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBDAAA519ED143100B561CF /* STXMLDocument.h in Headers */,
+				2CBDAAA719ED143100B561CF /* STXMLBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +414,24 @@
 			productReference = 2C03225B192A2EC800B70BE4 /* STXMLDocumentTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2CBDAA8B19ED12C300B561CF /* STXMLDocument-mac-framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CBDAAA319ED12C300B561CF /* Build configuration list for PBXNativeTarget "STXMLDocument-mac-framework" */;
+			buildPhases = (
+				2CBDAA8719ED12C300B561CF /* Sources */,
+				2CBDAA8819ED12C300B561CF /* Frameworks */,
+				2CBDAA8919ED12C300B561CF /* Headers */,
+				2CBDAA8A19ED12C300B561CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "STXMLDocument-mac-framework";
+			productName = "STXMLDocument-mac-framework";
+			productReference = 2CBDAA8C19ED12C300B561CF /* STXMLDocument.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -400,6 +446,9 @@
 					};
 					2C03225A192A2EC800B70BE4 = {
 						TestTargetID = 2C0321E41929FA5C00B70BE4;
+					};
+					2CBDAA8B19ED12C300B561CF = {
+						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
@@ -418,6 +467,7 @@
 				2C0321E41929FA5C00B70BE4 /* STXMLDocument-iOS */,
 				2C03225A192A2EC800B70BE4 /* STXMLDocumentTests-iOS */,
 				2C032214192A1C8F00B70BE4 /* STXMLDocument-mac */,
+				2CBDAA8B19ED12C300B561CF /* STXMLDocument-mac-framework */,
 				2C032244192A2EA500B70BE4 /* STXMLDocumentTests-mac */,
 			);
 		};
@@ -432,6 +482,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C032259192A2EC800B70BE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CBDAA8A19ED12C300B561CF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -478,6 +535,15 @@
 				2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */,
 				2CCB67BC19EBD29C00947B73 /* STXMLBuilderTests.m in Sources */,
 				2C50CDBD1994D2A20043CF19 /* STXMLDocumentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CBDAA8719ED12C300B561CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CBDAAA819ED143100B561CF /* STXMLBuilder.m in Sources */,
+				2CBDAAA619ED143100B561CF /* STXMLDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +684,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
 			buildSettings = {
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "STXMLDocument/STXMLDocument-Bridging-Header.h";
 			};
@@ -808,6 +873,58 @@
 			};
 			name = Release;
 		};
+		2CBDAA9F19ED12C300B561CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = STXMLDocument/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = STXMLDocument;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2CBDAAA019ED12C300B561CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = STXMLDocument/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = STXMLDocument;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -852,6 +969,15 @@
 			buildConfigurations = (
 				2C03226D192A2EC900B70BE4 /* Debug */,
 				2C03226E192A2EC900B70BE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CBDAAA319ED12C300B561CF /* Build configuration list for PBXNativeTarget "STXMLDocument-mac-framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CBDAA9F19ED12C300B561CF /* Debug */,
+				2CBDAAA019ED12C300B561CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
