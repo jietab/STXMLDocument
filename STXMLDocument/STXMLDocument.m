@@ -9,10 +9,15 @@
 
 @interface STXMLDocument ()
 - (STXMLNode *)uniquedNodeForNodePtr:(xmlNodePtr)nodePtr;
+- (STXMLNamespace *)uniquedNamespaceForNsPtr:(xmlNsPtr)nsPtr;
 @end
 
 @interface STXMLNode ()
 - (id)initWithDocument:(STXMLDocument *)doc nodePtr:(xmlNodePtr)nodePtr;
+@end
+
+@interface STXMLNamespace ()
+- (id)initWithDocument:(STXMLDocument *)doc nsPtr:(xmlNsPtr)nsPtr;
 @end
 
 @interface STXPathResult ()
@@ -28,6 +33,7 @@
     NSArray *_children;
     STXMLElement *_rootElement;
     NSMapTable *_instantiatedNodesByNodePtr;
+    NSMapTable *_instantiatedNamespacesByNsPtr;
 }
 
 - (id)init {
@@ -55,6 +61,7 @@
 
     if ((self = [super init])) {
         _instantiatedNodesByNodePtr = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsIntegerPersonality|NSPointerFunctionsOpaqueMemory valueOptions:NSPointerFunctionsObjectPersonality|NSPointerFunctionsWeakMemory capacity:0];
+        _instantiatedNamespacesByNsPtr = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsIntegerPersonality|NSPointerFunctionsOpaqueMemory valueOptions:NSPointerFunctionsObjectPersonality|NSPointerFunctionsWeakMemory capacity:0];
 
         xmlInitParserCtxt(&_pctx);
 
@@ -145,6 +152,21 @@
     return node;
 }
 
+- (STXMLNamespace *)uniquedNamespaceForNsPtr:(xmlNsPtr)nsPtr {
+    if (!nsPtr) {
+        return nil;
+    }
+
+    __unsafe_unretained id const key = (__bridge id)(void *)(nsPtr);
+    STXMLNamespace *namespace = [_instantiatedNamespacesByNsPtr objectForKey:key];
+    if (!namespace) {
+        namespace = [[STXMLNamespace alloc] initWithDocument:self nsPtr:nsPtr];
+        if (namespace) {
+            [_instantiatedNamespacesByNsPtr setObject:namespace forKey:key];
+        }
+    }
+    return namespace;
+}
 
 - (STXPathResult *)resultByEvaluatingXPathExpression:(NSString *)xpath {
     return [self resultByEvaluatingXPathExpression:xpath namespaces:nil error:NULL];
@@ -218,6 +240,7 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
 @protected
     STXMLDocument *_doc;
     xmlNodePtr _node;
+    STXMLNamespace *_namespace;
     NSString *_name;
     NSArray *_children;
     NSArray *_attributes;
@@ -244,6 +267,18 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
 
 - (STXMLNodeType)type {
     return (STXMLNodeType)_node->type;
+}
+
+- (STXMLNamespace *)namespace {
+    if (!_namespace) {
+        STXMLDocument * const doc = _doc;
+        xmlNodePtr const node = _node;
+        xmlNsPtr const ns = node->ns;
+        if (ns) {
+            _namespace = [doc uniquedNamespaceForNsPtr:ns];
+        }
+    }
+    return _namespace;
 }
 
 - (NSString *)name {
@@ -339,6 +374,42 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
 
 
 @implementation STXMLAttribute
+@end
+
+
+@implementation STXMLNamespace {
+@protected
+    STXMLDocument *_doc;
+    xmlNsPtr _ns;
+    NSString *_href;
+}
+
+- (id)init {
+    return [self initWithDocument:nil nsPtr:NULL];
+}
+
+- (id)initWithDocument:(STXMLDocument *)doc nsPtr:(xmlNsPtr)nsPtr {
+    NSParameterAssert(doc);
+    NSParameterAssert(nsPtr);
+    if ((self = [super init])) {
+        _doc = doc;
+        _ns = nsPtr;
+    }
+    return self;
+}
+
+- (NSString *)href {
+    if (!_href) {
+        xmlNsPtr const ns = _ns;
+        xmlChar const * const href = ns->href;
+        if (href) {
+            int const length = xmlStrlen(href);
+            _href = [[NSString alloc] initWithBytes:(void *)href length:(NSUInteger)length encoding:NSUTF8StringEncoding];
+        }
+    }
+    return _href;
+}
+
 @end
 
 

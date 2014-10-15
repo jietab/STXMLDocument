@@ -30,6 +30,7 @@ typedef NS_ENUM(NSUInteger, STXMLNodeType) {
 @class STXMLDocument;
 @class STXMLNode;
 @class STXMLElement;
+@class STXMLNamespace;
 @class STXPathResult;
 
 typedef BOOL(^STXMLNodePredicate)(STXMLNode *node, BOOL *stop);
@@ -52,6 +53,7 @@ extern STXMLNodePredicate STXMLNodeHasName(NSString *name);
 
 @interface STXMLNode : NSObject
 @property (nonatomic,assign,readonly) STXMLNodeType type;
+@property (nonatomic,strong,readonly) STXMLNamespace *namespace;
 @property (nonatomic,copy,readonly) NSString *name;
 @property (nonatomic,copy,readonly) NSArray *children;
 - (NSArray *)childrenPassingTest:(STXMLNodePredicate)predicate;
@@ -64,6 +66,10 @@ extern STXMLNodePredicate STXMLNodeHasName(NSString *name);
 @end
 
 @interface STXMLAttribute : STXMLNode
+@end
+
+@interface STXMLNamespace : NSObject
+@property (nonatomic,copy,readonly) NSString *href;
 @end
 
 

@@ -137,6 +137,15 @@
     XCTAssertEqualObjects(attributesPassingTest, attributesPassingTest2, @"");
 }
 
+- (void)testNamespaces1 {
+    NSData * const input = [@"<foo:foo xmlns:foo=\"http://xmlns.chikachow.org/foo\">a</foo:foo>" dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
+    STXMLDocument * const doc = [[STXMLDocument alloc] initWithData:input];
+    XCTAssertNotNil(doc, "");
+
+    STXMLNamespace * const foo = doc.rootElement.namespace;
+    XCTAssertEqualObjects(foo.href, @"http://xmlns.chikachow.org/foo");
+}
+
 - (void)testXPath1 {
     NSData * const input = [@"<a><b/><c><d>e</d></c><f/></a>" dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     STXMLDocument * const doc = [[STXMLDocument alloc] initWithData:input];
