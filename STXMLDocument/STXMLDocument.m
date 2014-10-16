@@ -453,6 +453,9 @@ STXMLNodePredicate STXMLNodeHasName(NSString *name) {
         STXMLDocument * const doc = _doc;
         xmlXPathObjectPtr const xpathObject = _xpathObject;
         xmlNodeSetPtr const nodeset = xpathObject->nodesetval;
+        if (!nodeset) {
+            return nil;
+        }
 
         NSMutableArray * const nodes = [[NSMutableArray alloc] initWithCapacity:(NSUInteger)nodeset->nodeNr];
 
