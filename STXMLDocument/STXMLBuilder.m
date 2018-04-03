@@ -214,7 +214,8 @@
     return self;
 }
 - (void)dealloc {
-    xmlFreeDoc(_doc), _doc = NULL;
+    xmlFreeDoc(_doc);
+    _doc = NULL;
 }
 
 
@@ -285,8 +286,10 @@
     xmlSaveDoc(ctx, _doc);
     xmlSaveFlush(ctx);
     NSData * const data = [[NSData alloc] initWithBytes:xmlBufferContent(buf) length:(NSUInteger)xmlBufferLength(buf)];
-    xmlSaveClose(ctx), ctx = NULL;
-    xmlBufferFree(buf), buf = NULL;
+    xmlSaveClose(ctx);
+    ctx = NULL;
+    xmlBufferFree(buf);
+    buf = NULL;
     return data;
 }
 
