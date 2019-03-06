@@ -10,6 +10,8 @@
 		2C03226F192A2F2E00B70BE4 /* STXMLDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */; };
 		2C032275192A30C200B70BE4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; };
 		2CCB67BC19EBD29C00947B73 /* STXMLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */; };
+		CB8D7761222F9D5500AFA9B3 /* STXMLDocument-iOS.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CB8D775F222F9D5500AFA9B3 /* STXMLDocument-iOS.xcconfig */; };
+		CB8D7762222F9D5500AFA9B3 /* STXMLDocument.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CB8D7760222F9D5500AFA9B3 /* STXMLDocument.xcconfig */; };
 		CBA4BD6F2226546E002C0D1C /* STXMLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */; };
 		CBA4BD702226546E002C0D1C /* STXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */; };
 		CBA4BD722226546E002C0D1C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C03223E192A219500B70BE4 /* libxml2.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -18,19 +20,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STXMLDocument.h; sourceTree = "<group>"; };
-		2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STXMLDocument.m; sourceTree = "<group>"; };
-		2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "STXMLDocument-iOS.xcconfig"; sourceTree = "<group>"; };
-		2C03220F192A02C000B70BE4 /* STXMLDocument.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STXMLDocument.xcconfig; sourceTree = "<group>"; };
-		2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "STXMLDocument-mac.xcconfig"; sourceTree = "<group>"; };
+		2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = STXMLDocument.h; path = ../Source/STXMLDocument.h; sourceTree = "<group>"; };
+		2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = STXMLDocument.m; path = ../Source/STXMLDocument.m; sourceTree = "<group>"; };
 		2C03223E192A219500B70BE4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		2C03224B192A2EA500B70BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C03224F192A2EA500B70BE4 /* STXMLDocumentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STXMLDocumentTests.m; sourceTree = "<group>"; };
 		2C03225B192A2EC800B70BE4 /* STXMLDocumentTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "STXMLDocumentTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CBDAA8F19ED12C300B561CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STXMLBuilder.h; sourceTree = "<group>"; };
-		2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STXMLBuilder.m; sourceTree = "<group>"; };
+		2CBDAA8F19ED12C300B561CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Source/Info.plist; sourceTree = "<group>"; };
+		2CCB67B619EBCBA200947B73 /* STXMLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STXMLBuilder.h; path = ../Source/STXMLBuilder.h; sourceTree = "<group>"; };
+		2CCB67B719EBCBA200947B73 /* STXMLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STXMLBuilder.m; path = ../Source/STXMLBuilder.m; sourceTree = "<group>"; };
 		2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STXMLBuilderTests.m; sourceTree = "<group>"; };
+		CB8D775F222F9D5500AFA9B3 /* STXMLDocument-iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "STXMLDocument-iOS.xcconfig"; sourceTree = "<group>"; };
+		CB8D7760222F9D5500AFA9B3 /* STXMLDocument.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = STXMLDocument.xcconfig; sourceTree = "<group>"; };
 		CBA4BD7A2226546E002C0D1C /* STXMLDocument.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = STXMLDocument.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0321EA1929FA5C00B70BE4 /* STXMLDocument */,
+				CB8D775E222F9D5500AFA9B3 /* Configuration */,
 				2C032249192A2EA500B70BE4 /* STXMLDocumentTests */,
 				2C032240192A21A000B70BE4 /* lib */,
 				2C0321E61929FA5C00B70BE4 /* Products */,
@@ -76,9 +78,6 @@
 		2C0321EA1929FA5C00B70BE4 /* STXMLDocument */ = {
 			isa = PBXGroup;
 			children = (
-				2C03220F192A02C000B70BE4 /* STXMLDocument.xcconfig */,
-				2C03220E192A02AB00B70BE4 /* STXMLDocument-iOS.xcconfig */,
-				2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */,
 				2CBDAA8F19ED12C300B561CF /* Info.plist */,
 				2C0321ED1929FA5C00B70BE4 /* STXMLDocument.h */,
 				2C0321EF1929FA5C00B70BE4 /* STXMLDocument.m */,
@@ -104,6 +103,15 @@
 				2CCB67BB19EBD29C00947B73 /* STXMLBuilderTests.m */,
 			);
 			path = STXMLDocumentTests;
+			sourceTree = "<group>";
+		};
+		CB8D775E222F9D5500AFA9B3 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CB8D775F222F9D5500AFA9B3 /* STXMLDocument-iOS.xcconfig */,
+				CB8D7760222F9D5500AFA9B3 /* STXMLDocument.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +208,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8D7762222F9D5500AFA9B3 /* STXMLDocument.xcconfig in Resources */,
+				CB8D7761222F9D5500AFA9B3 /* STXMLDocument-iOS.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +343,7 @@
 		};
 		CBA4BD782226546E002C0D1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
+			baseConfigurationReference = CB8D775F222F9D5500AFA9B3 /* STXMLDocument-iOS.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -346,7 +356,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/STXMLDocument/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -362,7 +372,7 @@
 		};
 		CBA4BD792226546E002C0D1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C032210192A1C6100B70BE4 /* STXMLDocument-mac.xcconfig */;
+			baseConfigurationReference = CB8D775F222F9D5500AFA9B3 /* STXMLDocument-iOS.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -375,7 +385,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/STXMLDocument/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";

@@ -18,7 +18,7 @@
     id<STXMLBuilderNamespace> const b = [r addNamespaceWithPrefix:@"b" href:@"http://chikachow.org/b"];
     id<STXMLBuilderElement> const el1 = [r addChildElementWithNamespace:a name:@"c"];
     id<STXMLBuilderElement> const el2 = [el1 addChildElementWithNamespace:b name:@"d"];
-    id<STXMLBuilderElement> const el3 = [el2 addChildElementWithNamespace:a name:@"e"];
+    [el2 addChildElementWithNamespace:a name:@"e"];
 
     NSData * const data = [doc dataUsingEncoding:NSUTF8StringEncoding];
     NSString * const string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
