@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2C03225A192A2EC800B70BE4"
+               BuildableName = "STXMLDocumentTests-iOS.xctest"
+               BlueprintName = "STXMLDocumentTests-iOS"
+               ReferencedContainer = "container:STXMLDocument.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CBA4BD6D2226546E002C0D1C"
+            BuildableName = "STXMLDocument.framework"
+            BlueprintName = "STXMLDocument-iOS-framework"
+            ReferencedContainer = "container:STXMLDocument.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
