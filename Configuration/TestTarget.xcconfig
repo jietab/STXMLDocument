@@ -1,0 +1,10 @@
+SDKROOT = iphoneos
+IPHONEOS_DEPLOYMENT_TARGET = 9.0
+TARGETED_DEVICE_FAMILY = 1,2
+
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+FRAMEWORK_SEARCH_PATHS = $(inherited)
+
+INFOPLIST_FILE = Tests/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = au.com.tabcorp.STXMLDocument.Tests-ios
+PRODUCT_NAME = $(TARGET_NAME)
